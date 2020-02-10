@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,10 +7,10 @@ namespace Clase_1
     
     class Curso
     {
-        public string nombre;
-        public string horario;
-        public float costo;
-        public string profesor;
+        private string nombre;
+        private string horario;
+        private float costo;
+        private string profesor;
 
         public Curso()
 
@@ -23,6 +23,10 @@ namespace Clase_1
             this.costo = cos;
             this.profesor = pro;
         }
-
+        public override string ToString()
+        {
+            return string.Format("{0}\t{1}\t{2:C2}\t{3}\t",
+            nombre, horario, costo, profesor);
+        }
     }
 }
