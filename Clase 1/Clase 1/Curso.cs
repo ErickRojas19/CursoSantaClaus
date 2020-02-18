@@ -7,10 +7,10 @@ namespace Clase_1
     
     class Curso
     {
-        private string nombre;
-        private string horario;
-        private float costo;
-        private string profesor;
+        public string nombre;
+        public string horario;
+        public float costo;
+        public string profesor;
 
         public Curso()
 
@@ -47,16 +47,19 @@ namespace Clase_1
         {
             this.costo = nuevoCosto;
         }
-        /*public override string ToString()
+        public string getProfesor()
         {
-            return string.Format("{0}\t{1}\t{2:C2}\t",
-            nombre, horario, costo);
+            return profesor;
         }
-        */
+        public void setProfesor(string nuevoProfesor)
+        {
+            this.profesor = nuevoProfesor;
+        }
+
         public override string ToString()
         {
-            return string.Format("{0,-20} {1,30} {2:C2}",
-            getNombre(), getHorario(), getCosto());
+            return string.Format("{0,-20} {1,30} {2:C2} {3,30}",
+            getNombre(), getHorario(), getCosto(), getProfesor());
 
         }
         public void CapturarDatosPorConsola()
@@ -65,8 +68,8 @@ namespace Clase_1
             Console.WriteLine("nombre: "); setNombre(Console.ReadLine());
             Console.WriteLine("horario: "); setHorario(Console.ReadLine());
             Console.WriteLine("valor: "); setCosto(Convert.ToSingle(Console.ReadLine()));
+            Console.WriteLine("Profesor: "); setProfesor(Console.ReadLine());
         }
-
         
     }
 }
