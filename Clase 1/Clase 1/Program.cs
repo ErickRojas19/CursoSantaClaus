@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Clase_1
 {
@@ -37,18 +38,22 @@ namespace Clase_1
             Console.ReadKey();
             */
             Curso cocina1 = new Curso();
-            cocina1.CapturarDatosPorConsola();
+            cocina1.nombre = "Tamales";
+            cocina1.horario = "Sabados de 2 a 4 P.M";
+            cocina1.costo = 80000F;
+            cocina1.profesor = "Carlos";
 
+            
             Curso cocina2 = new Curso();
             cocina2.CapturarDatosPorConsola();
-
+            
             Curso cocina3 = new Curso();
             cocina3.CapturarDatosPorConsola();
-
+            /*
             Curso cocina4 = new Curso();
             cocina4.CapturarDatosPorConsola();
 
-            /*Curso[] VectorCursos = new Curso[4];
+            Curso[] VectorCursos = new Curso[4];
             VectorCursos[0] = cocina1;
             VectorCursos[1] = cocina2;
             VectorCursos[2] = cocina3;
@@ -65,8 +70,13 @@ namespace Clase_1
             ListaCursos.Add(cocina1);
             ListaCursos.Add(cocina2);
             ListaCursos.Add(cocina3);
-            ListaCursos.Add(cocina4);
+            //ListaCursos.Add(cocina4);
 
+            //Ordenar una lista
+            //ListaCursos = ListaCursos.OrderBy(o => o).ToList();
+            //También por Sort
+            //ListaCursos.Sort();
+            //No entendi porque no sirvio con ninguno :(
             Console.WriteLine("\nCatalogo de cursos de cocina navideños, usando listas");
             Console.WriteLine("=======================================================");
             foreach (Curso esteCurso in ListaCursos)
@@ -74,7 +84,26 @@ namespace Clase_1
                 Console.WriteLine(esteCurso);
             }
 
-        } 
+            // El contador que se encarga de decir cuantos cursos hay
+            var contadorCurso = ListaCursos.Count();
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("Total Cursos:\t" + contadorCurso);
+
+            // Para que funciona Capacity en listas
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("La capacidad es:\t " + ListaCursos.Capacity);
+
+            //TrimExcess
+
+            ListaCursos.TrimExcess();
+
+            //Clear
+
+            ListaCursos.Clear();
+
+            // Remover como función 
+
+            //ListaCursos.Remove();
+        }
     }
 }
-
